@@ -1,0 +1,6 @@
+title: "Utilizing News in the Stock Market"
+description: "Authors: Akash Juwadi, Manat Rao, Nicole Reardon"
+baseurl: "/stock_news" # This should be the name of the repository
+url: "https://cosmanatlol.github.io" # Your GitHub Pages URL
+
+theme: jekyll-theme-cayman
