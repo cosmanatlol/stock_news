@@ -233,35 +233,74 @@
 						<!-- Three -->
 							<section id="three">
 								<div class="container">
-									<h3>Headline Processing</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<div class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Possibly broke spacetime</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Terraformed a small moon</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Snapped dark matter in the wild</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-									</div>
+									<h3>Headline Processing & Technical Indicactors</h3>
+									<h4>Headline Processing</h4>
+									<p>Sentiment analysis of headlines was performed through a three-step process to efficiently
+										filter and assess the relevance of news content.</p>
+										<figure style="text-align: center;">
+											<figcaption style="text-align: center;">
+												Headline Processor Pipeline:
+											</figcaption>
+											<a href="#" class="image">
+												<img src="images/headline_processor.png" style="display: block; margin: auto; max-width: 100%;">
+											</a>
+										</figure>
+									<p>The first step of processing was removing redundant news headlines. Since we scraped
+										news titles from multiple sources, several instances of headlines may have reported on
+										the same event but with slight variations in wordings. Aside from reducing API costs, we
+										wanted to remove duplicates and similarly reported articles to give equal weight to each
+										story when passed into the large language model. We utilized an Agglomerative Clustering
+										algorithm to facilitate this. After normalizing, each headline was first encoded into vector
+										embeddings using a pre-trained language model developed by Microsoft, all-MiniLM-L6-v2.
+										The Agglomerative Clustering model used cosine distance to measure similarity to determine
+										which headlines were similar to each other. If it passed a certain threshold, 0.7, then
+										they formed a cluster in which only one headline from each cluster was saved to pass into
+										the large language model next. A threshold of 0.7 was selected to ensure that only highly
+										similar headlines were grouped.</p>
+									<p>The next step involves determining the relevance of each selected headline to a specific
+										sector. Relevance is a relatively straightforward task and can be handled by smaller large
+										language models such as Mistral 7b, LLAMA 2-7b, or GPT-4o mini. For this task, we chose
+										to use GPT-4o mini. Each headline is passed along with a sector to the model, which then
+										classifies whether or not the headline is relevant for predicting price movement for stocks in that sector. Only those headlines deemed relevant are then forwarded to the final layer
+										of the analysis.</p>
+									<p>In the final step, we assed how the relevant headlines influenced stock prices. All relevant
+										headlines were passed together with their corresponding stocks to a more powerful LLM,
+										such as GPT-4o or Gemini 1.5 Ultra. The model returns a score for each stock, ranging from
+										-5 to 5, where -5 indicates strong confidence that the stock will decrease in price based on
+										the headline, and 5 indicates strong confidence that the stock will increase in price the
+										following day. These sentiment scores are then ready to be used in our final models.</p>
+									<h4>Technical Indicactors</h4>
+									<p>To predict stock price movements, we developed a technical model that combines traditional
+										technical analysis with machine learning methods. Key technical indicators, including
+										exponential moving averages (EMA), moving average convergence divergence (MACD),
+										and Bollinger Bands, were calculated from the raw price data.</p>
+									<p>We calculated a 10-period EMA as well as a 25-period EMA. In general, a 10-period EMA
+										captures short-term trends, while a 25-period EMA helps smooth out price fluctuations
+										and reveals the medium-term direction. By comparing them, we can identify short-term
+										reversals and confirm longer-term trends. More importantly, a crossover between shortterm
+										and medium-term EMAs can be interpreted as a signal to buy or sell.</p>
+									<p>We calculate the difference between the 12-period EMA and the 26-period EMA for the
+										MACD indicator. When the 12-period EMA is higher than the 26-period EMA, it indicates
+										bullish momentum, and conversely, when the 12-period EMA is below the 26-period EMA,
+										it signals bearish momentum. Additionally, we calculated the signal line by applying a 9-period
+										EMA to the MACD line. The signal line serves as a trigger for buying or selling when
+										the MACD line crosses above or below it.</p>
+									<p>Bollinger Bands consist of three lines: a moving average, typically the 5-period simple
+										moving average, an upper band, and a lower band. The moving average typically represents
+										the stock’s average price over a set period, while the upper and lower bands are calculated by
+										adding and subtracting a specified number of standard deviations from the moving average.
+										We selected to measure it against 1 standard deviation to be more sensitive to price changes
+										as we are predicting for short-term trading. The distance between the upper and lower
+										bands expands when the stock becomes more volatile and contracts during periods of low
+										volatility. The relative position of the stock price within the bands is also used to gauge
+										potential price movements and reversals.</p>
+										<p>These indicators were selected due to their ability to capture trends, momentum, volatil-
+											ity, and to identify overbought or oversold conditions. The resulting dataset is further
+											enhanced by calculating the percentage change in price and adding a target variable that
+											represents the next day’s closing price.</p>
 								</div>
 							</section>
-
-							<!-- Four -->
+						<!-- Four -->
 							<section id="four">
 								<div class="container">
 									<h3>Technical Model</h3>
