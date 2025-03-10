@@ -65,15 +65,155 @@
 							<section id="two">
 								<div class="container">
 									<h3>Data Sources</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<ul class="feature-icons">
-										<li class="icon solid fa-code">Write all the code</li>
-										<li class="icon solid fa-cubes">Stack small boxes</li>
-										<li class="icon solid fa-book">Read books and stuff</li>
-										<li class="icon solid fa-coffee">Drink much coffee</li>
-										<li class="icon solid fa-bolt">Lightning bolt</li>
-										<li class="icon solid fa-users">Shadow clone technique</li>
-									</ul>
+									<p>Our study focused on a carefully selected set of stocks across four key market sectors:
+										Technology, Healthcare, Energy, and Consumer Defensive. These sectors were chosen to
+										minimize correlation and overlap, ensuring a diverse representation of market dynamics.
+										Within each sector, we specifically chose companies with above-median market capital-
+										ization. For ample diversity, we selected 15 stocks that met this threshold, with only the
+										Energy sector that had 11 companies above the median. This criterion was used to concen-
+										trate on companies that attract significant media attention and maintain enough trading
+										volume for reliable price discovery. This ultimately helped address potential data spar-
+										sity issues that could arise with smaller, less-covered companies, where infrequent news
+										mentions and price movements might be more influenced by liquidity constraints than by
+										information flows.</p>
+									<h4 style="text-align: center;">List of 56 Selected Stocks by Sector</h4>
+									<table>
+										<thead>
+											<tr>
+												<th>Healthcare</th>
+												<th>Energy</th>
+												<th>Technology</th>
+												<th>Consumer Defensive</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>ISRG - Intuitive Surgical</td>
+												<td>WMB - Williams Companies</td>
+												<td>PLTR - Palantir Technologies</td>
+												<td>COST - Costco</td>
+											</tr>
+											<tr>
+												<td>IDXX - IDEXX Laboratories</td>
+												<td>KMI - Kinder Morgan</td>
+												<td>CRWD - CrowdStrike</td>
+												<td>WMT - Walmart</td>
+											</tr>
+											<tr>
+												<td>BSX - Boston Scientific</td>
+												<td>OKE - ONEOK</td>
+												<td>PANW - Palo Alto Networks</td>
+												<td>MNST - Monster Beverage</td>
+											</tr>
+											<tr>
+												<td>LLY - Eli Lilly</td>
+												<td>BKR - Baker Hughes</td>
+												<td>NOW - ServiceNow</td>
+												<td>HSY - Hershey’s</td>
+											</tr>
+											<tr>
+												<td>EW - Edwards Lifesciences</td>
+												<td>CVX - Chevron</td>
+												<td>ANET - Arista Networks</td>
+												<td>PG - Procter & Gamble</td>
+											</tr>
+											<tr>
+												<td>ZTS - Zoetis</td>
+												<td>XOM - Exxon Mobil</td>
+												<td>CDNS - Cadence Design Systems</td>
+												<td>CL - Colgate-Palmolive</td>
+											</tr>
+											<tr>
+												<td>SKY - Stryker</td>
+												<td>MPC - Marathon Petroleum</td>
+												<td>FTNT - Fortinet</td>
+												<td>KO - Coca-Cola</td>
+											</tr>
+											<tr>
+												<td>DHR - Danaher</td>
+												<td>EOG - EOG Resources</td>
+												<td>ADSK - Autodesk</td>
+												<td>PM - Philip Morris</td>
+											</tr>
+											<tr>
+												<td>ABT - Abbott Laboratories</td>
+												<td>SLB - Schlumberger</td>
+												<td>MSI - Motorola Solutions</td>
+												<td>MDLZ - Mondelez International</td>
+											</tr>
+											<tr>
+												<td>A - Agilent Technologies</td>
+												<td>COP - ConocoPhillips</td>
+												<td>AVGO - Broadcom</td>
+												<td>KVUE - Kenvue</td>
+											</tr>
+											<tr>
+												<td>CVS - CVS Health</td>
+												<td>PSX - Phillips 66</td>
+												<td>CSCO - Cisco Systems</td>
+												<td>TGT - Target</td>
+											</tr>
+											<tr>
+												<td>BMY - Bristol-Myers Squibb</td>
+												<td>-</td>
+												<td>NXPI - NXP Semiconductors</td>
+												<td>KR - Kroger</td>
+											</tr>
+											<tr>
+												<td>CI - Cigna</td>
+												<td>-</td>
+												<td>QCOM - Qualcomm</td>
+												<td>GIS - General Mills</td>
+											</tr>
+											<tr>
+												<td>MRK - Merck</td>
+												<td>-</td>
+												<td>DELL - Dell Technologies</td>
+												<td>MO - Altria</td>
+											</tr>
+											<tr>
+												<td>PFT - Pfizer</td>
+												<td>-</td>
+												<td>MU - Micron Technology</td>
+												<td>KHC - Kraft Heinz</td>
+											</tr>
+										</tbody>
+									</table>
+									<p>The data in our project required a comprehensive collection of both real-time news headlines
+										and financial market data. We established a systematic data acquisition strategy to
+										scrape news article titles and utilized Yahoo Finance’s API for technical analysis.
+									</p>
+									<p>We implemented an automated web scraping framework to collect news headlines from
+										five major news outlets: The New York Times, CNN, Stat News, Associated Press, and ABC
+										News. The Python-based web scraping framework is built using BeautifulSoup and Request
+										libraries. It was executed at 30-minute intervals during standard market trading hours
+										(9:30 AM to 4:30 PM Eastern Standard Time) to simulate real-time information processing
+										capabilities that would be available to traders. As such, the time of scraping was also stored
+										to be used in training the model. The data collection period extended from January 22,
+										2025, through February 28, 2025, encompassing 26 trading days. In total, we gathered
+										over 14,600 unique headlines: 7,093 from the Associated Press, 4,280 from CNN, 1,923
+										from The New York Times, 923 from ABC News, and 413 from Stat News.</p>
+									<p>The technical analysis data for our study is built on a variety of indicators that capture
+										different market trends and price behaviors. Using the Yahoo Finance API through the yfinance Python library, we systematically collected daily stock data for each selected com-
+										pany from January 1, 2024, to February 26, 2025. The data includes standard stock metrics
+										such as daily opening and closing prices, as well as intraday price movements and trading
+										volumes.</p>
+									<p>Key indicators derived from this data include:</p>
+									<ul>  
+										<li>Exponential Moving Averages (EMA): Short-term and medium-term trends were
+											captured using two EMAs. These moving averages give more weight to recent price
+											movements, making them more responsive to market changes.</li>  
+										<li>Moving Average Convergence Divergence (MACD): This indicator measures the diference between two EMAs of different time periods, helping to identify buy or sell
+											signals. The signal line, a smoothed version of the MACD, is also calculated to provide clearer insights into potential trend reversals.</li>  
+										<li>Bollinger Bands: This indicator measures stock price volatility and identifies overbought
+											or oversold conditions. The upper and lower bands, which are based on the
+											stock’s moving average and standard deviation, are used to assess price extremes.
+											The width of the bands reflects market volatility, while the relative position of the
+											stock’s price within the bands can signal potential breakout points.</li>  
+									  </ul>
+									<p>All these indicators were applied consistently across the stocks, allowing for the analysis of
+										market trends, volatility, and momentum. This technical data forms the foundation for the
+										model, helping to predict future stock price movements based on historical price patterns.</p>
 								</div>
 							</section>
 
