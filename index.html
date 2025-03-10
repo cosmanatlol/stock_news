@@ -248,21 +248,37 @@
 								</div>
 							</section>
 
-						<!-- Four -->
+							<!-- Four -->
 							<section id="four">
 								<div class="container">
 									<h3>Technical Model</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											
-											</div>
-										</div>
-									</form>
+									<p>After feature extraction, the data was preprocessed to ensure quality and consistency.
+										This included aligning stock data with sentiment scores derived from the headline processor,
+										which was merged with the stock data on matching dates to create the final dataset. The
+										data was split into training and test sets, with 90% of the data allocated for training and
+										the remaining 10% used to evaluate the model’s predictive performance.</p>
+									<p>The machine learning model used is XGBoost, a gradient boosting framework known
+										for its accuracy and efficiency with structured data. The model was trained to minimize
+										squared error when predicting the next day’s closing price. After training, the model’s
+										performance is evaluated using metrics such as mean squared error (MSE), mean absolute
+										percentage error (MAPE), and the R-squared value. We also used feature importance to
+										identify which technical indicators have the most influence on predictions to refine our
+										model. Finally, the trained model is used to predict stock prices for the next three days, and
+										the results are compared to actual prices to measure predictive accuracy and percentage
+										difference.</p>
+										<figure style="text-align: center;">
+											<figcaption style="text-align: center;">
+												Overall Model Pipeline:
+											</figcaption>
+											<a href="#" class="image">
+												<img src="images/pipeline.png" alt="pipeline" style="display: block; margin: auto; max-width: 100%;">
+											</a>
+										</figure>
+									<p>Additionally, another model was trained with all of the same data excluding the sentiment
+										score, in order to determine the true impact of sentiment analysis when accounting for the
+										technical indicactors.</p>		
 								</div>
 							</section>
-
-
 						<!-- Five -->
 							<section id="five">
 								<div class="container">
