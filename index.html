@@ -69,7 +69,7 @@
 									</p>
 									<p>
 										To bridge this gap, we developed an approach that combines both technical analysis with a sophisticated news headline sentiment analysis scorer to serve as inputs for a machine learning model that predicts future stock prices. 
-										By leveraging advanced natural language processing and machine learning techniques, our model captures the impact of real-time news on stock prices, enabling more precise market timing decisions.
+										By leveraging advanced natural language processing and machine learning techniques, our model captures the impact of realtime news on stock prices, enabling more precise market timing decisions.
 									</p>
 								</div>
 							</section>
@@ -81,12 +81,12 @@
 									<p>Our study focused on a carefully selected set of stocks across four key market sectors:
 										Technology, Healthcare, Energy, and Consumer Defensive. These sectors were chosen to
 										minimize correlation and overlap, ensuring a diverse representation of market dynamics.
-										Within each sector, we specifically chose companies with above-median market capital-
-										ization. For ample diversity, we selected 15 stocks that met this threshold, with only the
-										Energy sector that had 11 companies above the median. This criterion was used to concen-
-										trate on companies that attract significant media attention and maintain enough trading
-										volume for reliable price discovery. This ultimately helped address potential data spar-
-										sity issues that could arise with smaller, less-covered companies, where infrequent news
+										Within each sector, we specifically chose companies with above-median market capitalization.
+										For ample diversity, we selected 15 stocks that met this threshold, with only the
+										Energy sector that had 11 companies above the median. This criterion was used to concentrate
+										on companies that attract significant media attention and maintain enough trading
+										volume for reliable price discovery. This ultimately helped address potential data sparsity
+										issues that could arise with smaller, less-covered companies, where infrequent news
 										mentions and price movements might be more influenced by liquidity constraints than by
 										information flows.</p>
 									<h4 style="text-align: center;">List of 56 Selected Stocks by Sector</h4>
@@ -207,8 +207,8 @@
 										over 14,600 unique headlines: 7,093 from the Associated Press, 4,280 from CNN, 1,923
 										from The New York Times, 923 from ABC News, and 413 from Stat News.</p>
 									<p>The technical analysis data for our study is built on a variety of indicators that capture
-										different market trends and price behaviors. Using the Yahoo Finance API through the yfinance Python library, we systematically collected daily stock data for each selected com-
-										pany from January 1, 2024, to February 26, 2025. The data includes standard stock metrics
+										different market trends and price behaviors. Using the Yahoo Finance API through the yfinance Python library, we systematically collected daily stock data for each selected company
+										from January 1, 2024, to February 26, 2025. The data includes standard stock metrics
 										such as daily opening and closing prices, as well as intraday price movements and trading
 										volumes.</p>
 									<p>Key indicators derived from this data include:</p>
@@ -294,8 +294,8 @@
 										bands expands when the stock becomes more volatile and contracts during periods of low
 										volatility. The relative position of the stock price within the bands is also used to gauge
 										potential price movements and reversals.</p>
-										<p>These indicators were selected due to their ability to capture trends, momentum, volatil-
-											ity, and to identify overbought or oversold conditions. The resulting dataset is further
+										<p>These indicators were selected due to their ability to capture trends, momentum, volatility
+											, and to identify overbought or oversold conditions. The resulting dataset is further
 											enhanced by calculating the percentage change in price and adding a target variable that
 											represents the next day’s closing price.</p>
 								</div>
@@ -339,8 +339,8 @@
 										substantially improves accuracy compared to just using technical indicators. Looking at
 										all sectors together, predictions that incorporated sentiment had an average error of only
 										2.92% versus 4.46% for the technical-only approach, a 34.5% improvement. This confirms
-										that market sentiment pulled from news headlines adds real predictive value when com-
-										bined with traditional technical analysis.</p>
+										that market sentiment pulled from news headlines adds real predictive value when combined
+										with traditional technical analysis.</p>
 										<figure style="text-align: center;">
 											<figcaption style="text-align: center;">
 												A Comparison of Percent Error by Sector Based on Whether Sentiment Analysis was Used in the Model:
@@ -487,17 +487,17 @@
 										headlines is a relevant indicator for short term stock movements. However, it remains to be
 										seen whether our headline processor can be used to generate alpha within the stock market
 										over a long period of time and with a larger portfolio.</p>
-									<p>	Our results display the complexity of predicting within the stock market as even some-
-										thing as small as news headlines can have a significant impact on the stock market. This
-										makes sense as historically many traders have simply used traditional strategies like tech-
-										nical analysis which does not account for what is actually happening in the world. Thus
+									<p>	Our results display the complexity of predicting within the stock market as even something
+										as small as news headlines can have a significant impact on the stock market. This
+										makes sense as historically many traders have simply used traditional strategies like technical
+										analysis which does not account for what is actually happening in the world. Thus
 										the more types of media that can be captured will likely give more indicators to if a stock
 										will perform better or worse.</p>
 									<p>	Since no comprehensive dataset existed with hourly news headlines paired with stock
 										prices, we had to construct our own covering only one month of data. This limited time
 										frame makes it difficult to assess the model’s robustness across different market conditions.
-										Future work could address this by expanding the dataset to include multiple years of his-
-										torical news data.</p>
+										Future work could address this by expanding the dataset to include multiple years of historical
+										news data.</p>
 								</div>
 							</section>
 <!-- 
