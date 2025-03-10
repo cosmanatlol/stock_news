@@ -262,10 +262,134 @@
 								</div>
 							</section>
 
+
 						<!-- Five -->
 							<section id="five">
 								<div class="container">
 									<h3>Results</h3>
+									<p>Overall, our research shows that adding sentiment analysis to stock prediction models
+										substantially improves accuracy compared to just using technical indicators. Looking at
+										all sectors together, predictions that incorporated sentiment had an average error of only
+										2.92% versus 4.46% for the technical-only approach, a 34.5% improvement. This confirms
+										that market sentiment pulled from news headlines adds real predictive value when com-
+										bined with traditional technical analysis.</p>
+										<figure style="text-align: center;">
+											<figcaption style="text-align: center;">
+												A Comparison of Percent Error by Sector Based on Whether Sentiment Analysis was Used in the Model:
+											</figcaption>
+											<a href="#" class="image">
+												<img src="images/percent_error.png" alt="percent_error" style="display: block; margin: auto; max-width: 100%;">
+											</a>
+										</figure>
+									<h4>Sector-Specific Performance</h4>
+									<p>Different sectors responded differently to our sentiment analysis, reflecting how industries
+										react to news in unique ways. Energy stocks showed the greatest improvement, with
+										the error rate decreasing from 4.03% to 2.24%, a 44.4% reduction. This aligns with the
+										high sensitivity of energy markets to real-time events, such as geopolitical tensions in the
+										Middle East and hurricane forecasts, making timely news especially valuable for prediction.</p>
+									<p>Consumer staples saw a 37.8% reduction in error, reflecting their sensitivity to news about
+										inflation and consumer confidence. Healthcare followed closely with a 36.1% improvement,
+										consistent with how pharmaceutical and biotech stocks respond to FDA announcements,
+										clinical trial results, and health policy updates.</p>
+									<p>Technology stocks showed the least improvement at 22.7%. This likely reflects the sector’s
+										focus on long-term growth and quarterly earnings rather than short-term news cycles.
+										While sentiment still plays a role in the technology sector, fundamental analysis and earnings
+										projections may carry more weight. The key takeaway is that sentiment analysis should
+										be adjusted by sector and that there is no universal approach that works for all industries.</p>
+									<h4>Case Study: Abbott Laboratories</h4>
+									
+									<p>Looking at specific examples really drives home how sentiment improves prediction. We
+										tracked Abbott Laboratories (ABT) over three days and saw the following:</p>
+									<p>Looking at the specific price predictions over a three-day period, the results demonstrate
+										the value of sentiment analysis. On day one, both models performed identically, predicting
+										a price of $135.78 compared to the actual closing price of $135.96, a minimal difference of
+										18 cents.</p>
+										<figure style="text-align: center;">
+											<figcaption style="text-align: center;">
+												Comparison of actual and predicted stock price over three days for Abbott Laboratories:
+											</figcaption>
+											<a href="#" class="image">
+												<img src="images/ABT_pred vs. Actual.png" alt="Predicted vs. Actual for ABT" style="display: block; margin: auto; max-width: 100%;">
+											</a>
+
+										</figure>
+									<p>By the second day, differences between the models became more apparent. While the
+										actual price remained relatively stable at $135.87, the sentiment-enhanced model predicted
+										$135.29, with a minor deviation of just 58 cents. In contrast, the technical-only model
+										showed a larger divergence, estimating $132.50 and undervaluing the actual price by $3.37.</p>
+									<p>The most notable divergence occurred on day three when the actual price rose to $138.01.
+										The sentiment-enhanced model, accounting for positive market sentiment, predicted $136.25,
+										underestimating by only $1.76. In contrast, the technical-only model failed to capture the
+										upward movement, predicting a sharp decline to $126.75—$11.26 below the actual price,
+										with an error exceeding 8%. This significant gap underscores the limitations of relying
+										solely on technical indicators, as they can overlook key market shifts that sentiment analysis
+										effectively detects.</p>
+									<h4>Daily Error Analysis</h4>
+									<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+										<caption style="font-weight: bold; font-size: 1.2em; margin-bottom: 10px;">Percent Daily Error By Sector and Analysis Type:</caption>
+										<thead>
+										  <tr>
+											<th></th>
+											<th colspan="2" style="text-align: center;">Healthcare</th>
+											<th colspan="2" style="text-align: center;">Energy</th>
+											<th colspan="2" style="text-align: center;">Consumer</th>
+											<th colspan="2" style="text-align: center;">Tech</th>
+										  </tr>
+										  <tr>
+											<th></th>
+											<th style="text-align: center;">w/ Sent</th>
+											<th style="text-align: center;">w/o Sent</th>
+											<th style="text-align: center;">w/ Sent</th>
+											<th style="text-align: center;">w/o Sent</th>
+											<th style="text-align: center;">w/ Sent</th>
+											<th style="text-align: center;">w/o Sent</th>
+											<th style="text-align: center;">w/ Sent</th>
+											<th style="text-align: center;">w/o Sent</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr>
+											<td>Day 1</td>
+											<td style="text-align: center;">1.36%</td>
+											<td style="text-align: center;">1.34%</td>
+											<td style="text-align: center;">1.11%</td>
+											<td style="text-align: center;">1.26%</td>
+											<td style="text-align: center;">2.07%</td>
+											<td style="text-align: center;">2.48%</td>
+											<td style="text-align: center;">2.13%</td>
+											<td style="text-align: center;">2.23%</td>
+										  </tr>
+										  <tr>
+											<td>Day 2</td>
+											<td style="text-align: center;">2.81%</td>
+											<td style="text-align: center;">5.05%</td>
+											<td style="text-align: center;">2.19%</td>
+											<td style="text-align: center;">5.05%</td>
+											<td style="text-align: center;">3.24%</td>
+											<td style="text-align: center;">4.9%</td>
+											<td style="text-align: center;">3.98%</td>
+											<td style="text-align: center;">4.7%</td>
+										  </tr>
+										  <tr>
+											<td>Day 3</td>
+											<td style="text-align: center;">3.37%</td>
+											<td style="text-align: center;">5.75%</td>
+											<td style="text-align: center;">3.07%</td>
+											<td style="text-align: center;">5.78%</td>
+											<td style="text-align: center;">4.42%</td>
+											<td style="text-align: center;">6.14%</td>
+											<td style="text-align: center;">5.82%</td>
+											<td style="text-align: center;">5.43%</td>
+										  </tr>
+										</tbody>
+									  </table>
+									  <p>A closer analysis of daily error rates shows that integrating sentiment analysis consistently
+										improves accuracy across different stock groups and time frames. The effect is especially noticeable
+										on volatile days. For example, on Day 2, Group 1 stocks had an error rate of 2.81% with sentiment integration, compared to 5.05% without it. A similar pattern appeared in
+										Group 3 on Day 3, where sentiment analysis reduced error from 6.14% to 4.42%.</p>
+									  <p>Overall, this hybrid approach performs better than traditional models by integrating technical
+										analysis with sentiment analysis. This framework enables traders to make better realtime
+										decisions that align with both market trends and investor reactions to news.</p>
 								</div>
 							</section>
 
