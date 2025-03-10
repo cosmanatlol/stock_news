@@ -123,22 +123,51 @@
 							</section>
 
 						<!-- Five -->
-						<section id="five">
+							<section id="five">
 								<div class="container">
 									<h3>Results</h3>
-						</section>
+								</div>
+							</section>
 
 						<!-- Six -->
-						<section id="six">
-							<div class="container">
-								<h3>Discussion</h3>
-						</section>
+							<section id="six">
+								<div class="container">
+									<h3>Discussion</h3>
+									<p>Initially we did not plan on using any large language models to assess the headlines and
+										just use a BERT model to determine if a specific headline is positive or negative about a
+										stock. However, we decided not to do this because a BERT model does not have a good
+										enough reasoning ability to determine relevance and could not determine if a headline will
+										postively or negatively affect a stock and as a whole weigh different types of headlines and
+										aggregating them to create a single score.</p>
+									<p>One specific challenge that we had was figuring out a good prompt to properly utilize
+										the LLM to the best of its ability. Another one was trying to trim the amount of headlines
+										to reduce API costs, which is why we decided to create a similarity filter.</p>
+								</div>
+							</section>
 
 						<!-- Seven -->
-						<section id="seven">
-							<div class="container">
-								<h3>Conclusion</h3>
-						</section>
+							<section id="seven">
+								<div class="container">
+									<h3>Conclusion</h3>
+									<p>In this project we built a pipeline to determine stock movement from news headlines and
+										historical stock data incorporating tools like Tree Boosting, ChatGPT, and vectorization.
+										Our model with headlines performed significantly better than the one without indicating
+										headlines is a relevant indicator for short term stock movements. However, it remains to be
+										seen whether our headline processor can be used to generate alpha within the stock market
+										over a long period of time and with a larger portfolio.</p>
+									<p>	Our results display the complexity of predicting within the stock market as even some-
+										thing as small as news headlines can have a significant impact on the stock market. This
+										makes sense as historically many traders have simply used traditional strategies like tech-
+										nical analysis which does not account for what is actually happening in the world. Thus
+										the more types of media that can be captured will likely give more indicators to if a stock
+										will perform better or worse.</p>
+									<p>	Since no comprehensive dataset existed with hourly news headlines paired with stock
+										prices, we had to construct our own covering only one month of data. This limited time
+										frame makes it difficult to assess the model’s robustness across different market conditions.
+										Future work could address this by expanding the dataset to include multiple years of his-
+										torical news data.</p>
+								</div>
+							</section>
 <!-- 
 									<section>
 										<h4>Lists</h4>
