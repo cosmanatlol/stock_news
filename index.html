@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Read Only by HTML5 UP</title>
+		<title>Utilizing News in the Stock Market</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -78,15 +78,155 @@
 							<section id="two">
 								<div class="container">
 									<h3>Data Sources</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<ul class="feature-icons">
-										<li class="icon solid fa-code">Write all the code</li>
-										<li class="icon solid fa-cubes">Stack small boxes</li>
-										<li class="icon solid fa-book">Read books and stuff</li>
-										<li class="icon solid fa-coffee">Drink much coffee</li>
-										<li class="icon solid fa-bolt">Lightning bolt</li>
-										<li class="icon solid fa-users">Shadow clone technique</li>
-									</ul>
+									<p>Our study focused on a carefully selected set of stocks across four key market sectors:
+										Technology, Healthcare, Energy, and Consumer Defensive. These sectors were chosen to
+										minimize correlation and overlap, ensuring a diverse representation of market dynamics.
+										Within each sector, we specifically chose companies with above-median market capital-
+										ization. For ample diversity, we selected 15 stocks that met this threshold, with only the
+										Energy sector that had 11 companies above the median. This criterion was used to concen-
+										trate on companies that attract significant media attention and maintain enough trading
+										volume for reliable price discovery. This ultimately helped address potential data spar-
+										sity issues that could arise with smaller, less-covered companies, where infrequent news
+										mentions and price movements might be more influenced by liquidity constraints than by
+										information flows.</p>
+									<h4 style="text-align: center;">List of 56 Selected Stocks by Sector</h4>
+									<table>
+										<thead>
+											<tr>
+												<th>Healthcare</th>
+												<th>Energy</th>
+												<th>Technology</th>
+												<th>Consumer Defensive</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>ISRG - Intuitive Surgical</td>
+												<td>WMB - Williams Companies</td>
+												<td>PLTR - Palantir Technologies</td>
+												<td>COST - Costco</td>
+											</tr>
+											<tr>
+												<td>IDXX - IDEXX Laboratories</td>
+												<td>KMI - Kinder Morgan</td>
+												<td>CRWD - CrowdStrike</td>
+												<td>WMT - Walmart</td>
+											</tr>
+											<tr>
+												<td>BSX - Boston Scientific</td>
+												<td>OKE - ONEOK</td>
+												<td>PANW - Palo Alto Networks</td>
+												<td>MNST - Monster Beverage</td>
+											</tr>
+											<tr>
+												<td>LLY - Eli Lilly</td>
+												<td>BKR - Baker Hughes</td>
+												<td>NOW - ServiceNow</td>
+												<td>HSY - Hershey’s</td>
+											</tr>
+											<tr>
+												<td>EW - Edwards Lifesciences</td>
+												<td>CVX - Chevron</td>
+												<td>ANET - Arista Networks</td>
+												<td>PG - Procter & Gamble</td>
+											</tr>
+											<tr>
+												<td>ZTS - Zoetis</td>
+												<td>XOM - Exxon Mobil</td>
+												<td>CDNS - Cadence Design Systems</td>
+												<td>CL - Colgate-Palmolive</td>
+											</tr>
+											<tr>
+												<td>SKY - Stryker</td>
+												<td>MPC - Marathon Petroleum</td>
+												<td>FTNT - Fortinet</td>
+												<td>KO - Coca-Cola</td>
+											</tr>
+											<tr>
+												<td>DHR - Danaher</td>
+												<td>EOG - EOG Resources</td>
+												<td>ADSK - Autodesk</td>
+												<td>PM - Philip Morris</td>
+											</tr>
+											<tr>
+												<td>ABT - Abbott Laboratories</td>
+												<td>SLB - Schlumberger</td>
+												<td>MSI - Motorola Solutions</td>
+												<td>MDLZ - Mondelez International</td>
+											</tr>
+											<tr>
+												<td>A - Agilent Technologies</td>
+												<td>COP - ConocoPhillips</td>
+												<td>AVGO - Broadcom</td>
+												<td>KVUE - Kenvue</td>
+											</tr>
+											<tr>
+												<td>CVS - CVS Health</td>
+												<td>PSX - Phillips 66</td>
+												<td>CSCO - Cisco Systems</td>
+												<td>TGT - Target</td>
+											</tr>
+											<tr>
+												<td>BMY - Bristol-Myers Squibb</td>
+												<td>-</td>
+												<td>NXPI - NXP Semiconductors</td>
+												<td>KR - Kroger</td>
+											</tr>
+											<tr>
+												<td>CI - Cigna</td>
+												<td>-</td>
+												<td>QCOM - Qualcomm</td>
+												<td>GIS - General Mills</td>
+											</tr>
+											<tr>
+												<td>MRK - Merck</td>
+												<td>-</td>
+												<td>DELL - Dell Technologies</td>
+												<td>MO - Altria</td>
+											</tr>
+											<tr>
+												<td>PFT - Pfizer</td>
+												<td>-</td>
+												<td>MU - Micron Technology</td>
+												<td>KHC - Kraft Heinz</td>
+											</tr>
+										</tbody>
+									</table>
+									<p>The data in our project required a comprehensive collection of both real-time news headlines
+										and financial market data. We established a systematic data acquisition strategy to
+										scrape news article titles and utilized Yahoo Finance’s API for technical analysis.
+									</p>
+									<p>We implemented an automated web scraping framework to collect news headlines from
+										five major news outlets: The New York Times, CNN, Stat News, Associated Press, and ABC
+										News. The Python-based web scraping framework is built using BeautifulSoup and Request
+										libraries. It was executed at 30-minute intervals during standard market trading hours
+										(9:30 AM to 4:30 PM Eastern Standard Time) to simulate real-time information processing
+										capabilities that would be available to traders. As such, the time of scraping was also stored
+										to be used in training the model. The data collection period extended from January 22,
+										2025, through February 28, 2025, encompassing 26 trading days. In total, we gathered
+										over 14,600 unique headlines: 7,093 from the Associated Press, 4,280 from CNN, 1,923
+										from The New York Times, 923 from ABC News, and 413 from Stat News.</p>
+									<p>The technical analysis data for our study is built on a variety of indicators that capture
+										different market trends and price behaviors. Using the Yahoo Finance API through the yfinance Python library, we systematically collected daily stock data for each selected com-
+										pany from January 1, 2024, to February 26, 2025. The data includes standard stock metrics
+										such as daily opening and closing prices, as well as intraday price movements and trading
+										volumes.</p>
+									<p>Key indicators derived from this data include:</p>
+									<ul>  
+										<li>Exponential Moving Averages (EMA): Short-term and medium-term trends were
+											captured using two EMAs. These moving averages give more weight to recent price
+											movements, making them more responsive to market changes.</li>  
+										<li>Moving Average Convergence Divergence (MACD): This indicator measures the diference between two EMAs of different time periods, helping to identify buy or sell
+											signals. The signal line, a smoothed version of the MACD, is also calculated to provide clearer insights into potential trend reversals.</li>  
+										<li>Bollinger Bands: This indicator measures stock price volatility and identifies overbought
+											or oversold conditions. The upper and lower bands, which are based on the
+											stock’s moving average and standard deviation, are used to assess price extremes.
+											The width of the bands reflects market volatility, while the relative position of the
+											stock’s price within the bands can signal potential breakout points.</li>  
+									  </ul>
+									<p>All these indicators were applied consistently across the stocks, allowing for the analysis of
+										market trends, volatility, and momentum. This technical data forms the foundation for the
+										model, helping to predict future stock price movements based on historical price patterns.</p>
 								</div>
 							</section>
 
@@ -121,37 +261,206 @@
 								</div>
 							</section>
 
-						<!-- Four -->
+							<!-- Four -->
 							<section id="four">
 								<div class="container">
 									<h3>Technical Model</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											
-											</div>
-										</div>
-									</form>
+									<p>After feature extraction, the data was preprocessed to ensure quality and consistency.
+										This included aligning stock data with sentiment scores derived from the headline processor,
+										which was merged with the stock data on matching dates to create the final dataset. The
+										data was split into training and test sets, with 90% of the data allocated for training and
+										the remaining 10% used to evaluate the model’s predictive performance.</p>
+									<p>The machine learning model used is XGBoost, a gradient boosting framework known
+										for its accuracy and efficiency with structured data. The model was trained to minimize
+										squared error when predicting the next day’s closing price. After training, the model’s
+										performance is evaluated using metrics such as mean squared error (MSE), mean absolute
+										percentage error (MAPE), and the R-squared value. We also used feature importance to
+										identify which technical indicators have the most influence on predictions to refine our
+										model. Finally, the trained model is used to predict stock prices for the next three days, and
+										the results are compared to actual prices to measure predictive accuracy and percentage
+										difference.</p>
+										<figure style="text-align: center;">
+											<figcaption style="text-align: center;">
+												Overall Model Pipeline:
+											</figcaption>
+											<a href="#" class="image">
+												<img src="images/pipeline.png" alt="pipeline" style="display: block; margin: auto; max-width: 100%;">
+											</a>
+										</figure>
+									<p>Additionally, another model was trained with all of the same data excluding the sentiment
+										score, in order to determine the true impact of sentiment analysis when accounting for the
+										technical indicactors.</p>		
+								</div>
+							</section>
+						<!-- Five -->
+							<section id="five">
+								<div class="container">
+									<h3>Results</h3>
+									<p>Overall, our research shows that adding sentiment analysis to stock prediction models
+										substantially improves accuracy compared to just using technical indicators. Looking at
+										all sectors together, predictions that incorporated sentiment had an average error of only
+										2.92% versus 4.46% for the technical-only approach, a 34.5% improvement. This confirms
+										that market sentiment pulled from news headlines adds real predictive value when com-
+										bined with traditional technical analysis.</p>
+										<figure style="text-align: center;">
+											<figcaption style="text-align: center;">
+												A Comparison of Percent Error by Sector Based on Whether Sentiment Analysis was Used in the Model:
+											</figcaption>
+											<a href="#" class="image">
+												<img src="images/percent_error.png" alt="percent_error" style="display: block; margin: auto; max-width: 100%;">
+											</a>
+										</figure>
+									<h4>Sector-Specific Performance</h4>
+									<p>Different sectors responded differently to our sentiment analysis, reflecting how industries
+										react to news in unique ways. Energy stocks showed the greatest improvement, with
+										the error rate decreasing from 4.03% to 2.24%, a 44.4% reduction. This aligns with the
+										high sensitivity of energy markets to real-time events, such as geopolitical tensions in the
+										Middle East and hurricane forecasts, making timely news especially valuable for prediction.</p>
+									<p>Consumer staples saw a 37.8% reduction in error, reflecting their sensitivity to news about
+										inflation and consumer confidence. Healthcare followed closely with a 36.1% improvement,
+										consistent with how pharmaceutical and biotech stocks respond to FDA announcements,
+										clinical trial results, and health policy updates.</p>
+									<p>Technology stocks showed the least improvement at 22.7%. This likely reflects the sector’s
+										focus on long-term growth and quarterly earnings rather than short-term news cycles.
+										While sentiment still plays a role in the technology sector, fundamental analysis and earnings
+										projections may carry more weight. The key takeaway is that sentiment analysis should
+										be adjusted by sector and that there is no universal approach that works for all industries.</p>
+									<h4>Case Study: Abbott Laboratories</h4>
+									
+									<p>Looking at specific examples really drives home how sentiment improves prediction. We
+										tracked Abbott Laboratories (ABT) over three days and saw the following:</p>
+									<p>Looking at the specific price predictions over a three-day period, the results demonstrate
+										the value of sentiment analysis. On day one, both models performed identically, predicting
+										a price of $135.78 compared to the actual closing price of $135.96, a minimal difference of
+										18 cents.</p>
+										<figure style="text-align: center;">
+											<figcaption style="text-align: center;">
+												Comparison of actual and predicted stock price over three days for Abbott Laboratories:
+											</figcaption>
+											<a href="#" class="image">
+												<img src="images/ABT_pred vs. Actual.png" alt="Predicted vs. Actual for ABT" style="display: block; margin: auto; max-width: 100%;">
+											</a>
+
+										</figure>
+									<p>By the second day, differences between the models became more apparent. While the
+										actual price remained relatively stable at $135.87, the sentiment-enhanced model predicted
+										$135.29, with a minor deviation of just 58 cents. In contrast, the technical-only model
+										showed a larger divergence, estimating $132.50 and undervaluing the actual price by $3.37.</p>
+									<p>The most notable divergence occurred on day three when the actual price rose to $138.01.
+										The sentiment-enhanced model, accounting for positive market sentiment, predicted $136.25,
+										underestimating by only $1.76. In contrast, the technical-only model failed to capture the
+										upward movement, predicting a sharp decline to $126.75—$11.26 below the actual price,
+										with an error exceeding 8%. This significant gap underscores the limitations of relying
+										solely on technical indicators, as they can overlook key market shifts that sentiment analysis
+										effectively detects.</p>
+									<h4>Daily Error Analysis</h4>
+									<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+										<caption style="font-weight: bold; font-size: 1.2em; margin-bottom: 10px;">Percent Daily Error By Sector and Analysis Type:</caption>
+										<thead>
+										  <tr>
+											<th></th>
+											<th colspan="2" style="text-align: center;">Healthcare</th>
+											<th colspan="2" style="text-align: center;">Energy</th>
+											<th colspan="2" style="text-align: center;">Consumer</th>
+											<th colspan="2" style="text-align: center;">Tech</th>
+										  </tr>
+										  <tr>
+											<th></th>
+											<th style="text-align: center;">w/ Sent</th>
+											<th style="text-align: center;">w/o Sent</th>
+											<th style="text-align: center;">w/ Sent</th>
+											<th style="text-align: center;">w/o Sent</th>
+											<th style="text-align: center;">w/ Sent</th>
+											<th style="text-align: center;">w/o Sent</th>
+											<th style="text-align: center;">w/ Sent</th>
+											<th style="text-align: center;">w/o Sent</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr>
+											<td>Day 1</td>
+											<td style="text-align: center;">1.36%</td>
+											<td style="text-align: center;">1.34%</td>
+											<td style="text-align: center;">1.11%</td>
+											<td style="text-align: center;">1.26%</td>
+											<td style="text-align: center;">2.07%</td>
+											<td style="text-align: center;">2.48%</td>
+											<td style="text-align: center;">2.13%</td>
+											<td style="text-align: center;">2.23%</td>
+										  </tr>
+										  <tr>
+											<td>Day 2</td>
+											<td style="text-align: center;">2.81%</td>
+											<td style="text-align: center;">5.05%</td>
+											<td style="text-align: center;">2.19%</td>
+											<td style="text-align: center;">5.05%</td>
+											<td style="text-align: center;">3.24%</td>
+											<td style="text-align: center;">4.9%</td>
+											<td style="text-align: center;">3.98%</td>
+											<td style="text-align: center;">4.7%</td>
+										  </tr>
+										  <tr>
+											<td>Day 3</td>
+											<td style="text-align: center;">3.37%</td>
+											<td style="text-align: center;">5.75%</td>
+											<td style="text-align: center;">3.07%</td>
+											<td style="text-align: center;">5.78%</td>
+											<td style="text-align: center;">4.42%</td>
+											<td style="text-align: center;">6.14%</td>
+											<td style="text-align: center;">5.82%</td>
+											<td style="text-align: center;">5.43%</td>
+										  </tr>
+										</tbody>
+									  </table>
+									  <p>A closer analysis of daily error rates shows that integrating sentiment analysis consistently
+										improves accuracy across different stock groups and time frames. The effect is especially noticeable
+										on volatile days. For example, on Day 2, Group 1 stocks had an error rate of 2.81% with sentiment integration, compared to 5.05% without it. A similar pattern appeared in
+										Group 3 on Day 3, where sentiment analysis reduced error from 6.14% to 4.42%.</p>
+									  <p>Overall, this hybrid approach performs better than traditional models by integrating technical
+										analysis with sentiment analysis. This framework enables traders to make better realtime
+										decisions that align with both market trends and investor reactions to news.</p>
 								</div>
 							</section>
 
-						<!-- Five -->
-						<section id="five">
-								<div class="container">
-									<h3>Results</h3>
-						</section>
-
 						<!-- Six -->
-						<section id="six">
-							<div class="container">
-								<h3>Discussion</h3>
-						</section>
+							<section id="six">
+								<div class="container">
+									<h3>Discussion</h3>
+									<p>Initially we did not plan on using any large language models to assess the headlines and
+										just use a BERT model to determine if a specific headline is positive or negative about a
+										stock. However, we decided not to do this because a BERT model does not have a good
+										enough reasoning ability to determine relevance and could not determine if a headline will
+										postively or negatively affect a stock and as a whole weigh different types of headlines and
+										aggregating them to create a single score.</p>
+									<p>One specific challenge that we had was figuring out a good prompt to properly utilize
+										the LLM to the best of its ability. Another one was trying to trim the amount of headlines
+										to reduce API costs, which is why we decided to create a similarity filter.</p>
+								</div>
+							</section>
 
 						<!-- Seven -->
-						<section id="seven">
-							<div class="container">
-								<h3>Conclusion</h3>
-						</section>
+							<section id="seven">
+								<div class="container">
+									<h3>Conclusion</h3>
+									<p>In this project we built a pipeline to determine stock movement from news headlines and
+										historical stock data incorporating tools like Tree Boosting, ChatGPT, and vectorization.
+										Our model with headlines performed significantly better than the one without indicating
+										headlines is a relevant indicator for short term stock movements. However, it remains to be
+										seen whether our headline processor can be used to generate alpha within the stock market
+										over a long period of time and with a larger portfolio.</p>
+									<p>	Our results display the complexity of predicting within the stock market as even some-
+										thing as small as news headlines can have a significant impact on the stock market. This
+										makes sense as historically many traders have simply used traditional strategies like tech-
+										nical analysis which does not account for what is actually happening in the world. Thus
+										the more types of media that can be captured will likely give more indicators to if a stock
+										will perform better or worse.</p>
+									<p>	Since no comprehensive dataset existed with hourly news headlines paired with stock
+										prices, we had to construct our own covering only one month of data. This limited time
+										frame makes it difficult to assess the model’s robustness across different market conditions.
+										Future work could address this by expanding the dataset to include multiple years of his-
+										torical news data.</p>
+								</div>
+							</section>
 <!-- 
 									<section>
 										<h4>Lists</h4>
